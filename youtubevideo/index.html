@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>유튜브 재생</title>
+</head>
+<body>
+    <form action="javascript:myFunction()" method="post">
+        <input type="text" id="textInput" placeholder="유튜브 링크를 넣어주세요!">
+        <input type="submit" value="완료" class="check">  
+    </form>
+    <div class="container">
+        <iframe id="haha" width="560" height="315" src="https://www.youtube.com/" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <script>
+        function myFunction() {
+          var addr = 'https://www.youtube.com/embed/'; //합치는 거
+          var txt = document.getElementById("textInput").value; //넣은 값 넣기
+          txt = txt.substr(32, 43);   //자르기 파이썬으로 치자면
+          document.getElementById("haha").src =addr.concat(txt); //합쳐서 haha에 있는 src값 바꾸기
+        }
+      </script>
+    <link rel="stylesheet" href="static\style.css">
+</body>
+</html>
